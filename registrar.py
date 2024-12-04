@@ -11,7 +11,7 @@ usuario.crear_tabla_usuario()
 def volver():
         root.destroy()
         subprocess.run(['python', "main.py"])
-class Registrar:
+class Registrar: 
 
     def __init__(self, root):
         self.root = root

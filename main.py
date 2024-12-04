@@ -36,8 +36,8 @@ boton_link.config(foreground="black")
 boton_link.pack()
 
 boton_link=tk.Button(root, text="Registrar Usuario", command=registrar)
-boton_link.config(background="white")
-boton_link.config(foreground="black")
+boton_link.config(background="black")
+boton_link.config(foreground="white")
 boton_link.pack()
 
 root.mainloop()
