@@ -33,7 +33,7 @@ class Registrar:
 
     def registrarse(self):
         nombre = self.nombre_entry.get()
-        contraseña = self.contraseña_entry.get()
+        contraseña = self.contraseña_entry.get() 
         
         if nombre and contraseña:
             try:
