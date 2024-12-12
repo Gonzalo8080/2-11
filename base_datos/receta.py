@@ -22,3 +22,14 @@ class Receta:
     def cerrar_conexion(self):
         self.cursor.close()
         self.receta.close()
+
+    def eliminar_receta(self, nombre_receta):
+        try:
+            
+            cursor = self.receta.cursor()
+            cursor.execute("DELETE FROM recetas WHERE nombre=?", (nombre_receta,))
+            self.receta.commit()
+            return True  
+        except Exception as e:
+            print(f"Error al eliminar receta: {e}")
+            return False
