@@ -27,28 +27,28 @@ class Buscar:
         recetas = receta.mostrar_recetas()
         if recetas:
             for fila in recetas:
-                # Suponiendo que cada fila tiene (nombre, descripcion)
+                
                 receta_nombre, receta_descripcion = fila[0], fila[1]
                 receta_info = f"{receta_nombre}: {receta_descripcion}"
                 
-                # Crear un marco para cada receta
+                
                 receta_frame = tk.Frame(self.root, bg="white", padx=10, pady=5)
                 receta_frame.pack(fill="x", pady=2)
                 
-                # Mostrar el texto de la receta
+                
                 tk.Label(receta_frame, text=receta_info, bg="white", anchor="w").pack(side="left", fill="x", expand=True)
                 
-                # Botón para eliminar la receta
+                
                 tk.Button(receta_frame, text="Eliminar", bg="red", fg="white", command=lambda nombre=receta_nombre: self.eliminar_receta(nombre)).pack(side="right")
 
     def eliminar_receta(self, receta_nombre):
-        # Confirmar antes de eliminar
+        
         confirmacion = messagebox.askyesno("Confirmar", f"¿Estás seguro de que deseas eliminar la receta '{receta_nombre}'?")
         if confirmacion:
             exito = receta.eliminar_receta(receta_nombre)
             if exito:
                 messagebox.showinfo("Éxito", "La receta fue eliminada exitosamente.")
-                self.receta_buscada()  # Refrescar la lista
+                self.receta_buscada()  
             else:
                 messagebox.showerror("Error", "Hubo un problema al eliminar la receta.")
 
